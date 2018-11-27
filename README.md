@@ -1,2 +1,2 @@
 # Meta-Gradients
-Learnable gradient gates bring interesting performance gains for meta-learning tasks
+Learnable gradient gates for meta-learning.
