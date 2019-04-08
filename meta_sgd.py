@@ -4,7 +4,7 @@ import tensorflow.contrib.eager as tfe
 import utils as ff
 
 
-print('i load dat')
+print('loading data..')
 omniglot = ff.sqds.load('data/omniglot.sqds')
 omni_arr = np.array(omniglot)
 print(omni_arr.shape)
@@ -93,7 +93,7 @@ print('network compiled')
 omni_batches = tf.transpose(np.reshape(omni_arr[:len(omni_arr)-len(omni_arr)%bs], [-1,bs,100,405]), [0, 2, 1, 3])
 
 log_dir = 'mg/tb'
-tb_tag = '_static1'
+tb_tag = '_msgd-1'
 
 global_step = tf.train.get_or_create_global_step()
 summary_writer = tf.contrib.summary.create_file_writer(log_dir)
