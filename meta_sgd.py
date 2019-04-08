@@ -3,14 +3,10 @@ import tensorflow as tf
 import tensorflow.contrib.eager as tfe
 import utils as ff
 
-
 print('loading data..')
 omniglot = ff.sqds.load('data/omniglot.sqds')
 omni_arr = np.array(omniglot)
 print(omni_arr.shape)
-
-
-# static alphas ( original setup )
 
 #width = 20
 #n_classes = 5
@@ -31,8 +27,8 @@ def pvar(shape, name):
     alphas.append(_alphas)
     return [_thetas, tf.zeros(shape), _alphas]
 
-thetas = []
-alphas = []
+thetas = [] # network parameters
+alphas = [] # learnable element-wise learning rates
 V_d1 = pvar([n_inputs+1,n_hnodes], 'd1')
 V_d2 = pvar([n_hnodes+1,n_outputs], 'd2')
 layers = [V_d1, V_d2]
